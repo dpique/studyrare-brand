@@ -1,0 +1,143 @@
+/**
+ * StudyRare Brand Guide - Standalone CSS Variables
+ * Version 2.0.0
+ *
+ * Import this file into any project (HTML, React, Vue, email templates,
+ * PDF generators, etc.) to access the StudyRare brand system.
+ *
+ * Usage:
+ *   @import url('path/to/brand-guide.css');
+ *   .my-button { background: var(--sr-amber-400); color: var(--sr-navy-900); }
+ *
+ * Source of truth: SKILL.md (alongside this file).
+ */
+
+:root {
+  /* GENERATED: brand-tokens — DO NOT EDIT. Run `npm run generate-brand`. */
+  /* Navy palette - Structure, trust, professionalism */
+  --sr-navy-50: #f1f3f8;
+  --sr-navy-100: #e0e4ef;
+  --sr-navy-200: #c3cbe0;
+  --sr-navy-300: #99a6c8;
+  --sr-navy-400: #6b7db3;
+  --sr-navy-500: #4d5f82;
+  --sr-navy-600: #3d4a6b;
+  --sr-navy-700: #2d3555;
+  --sr-navy-800: #242b45;
+  --sr-navy-900: #1a2035;
+  --sr-navy-950: #111525;
+
+  /* Periwinkle palette - The dot field, structural connective color */
+  --sr-peri-50: #f0f2fc;
+  --sr-peri-100: #d8dbf7;
+  --sr-peri-300: #b8c1f0;
+  --sr-peri-500: #8893e5;
+  --sr-peri-700: #5562a8;
+
+  /* Amber palette - CTAs, action, the rare signal */
+  --sr-amber-50: #fdf8eb;
+  --sr-amber-100: #faefc8;
+  --sr-amber-200: #f5df8c;
+  --sr-amber-300: #f0c955;
+  --sr-amber-400: #e8a838;
+  --sr-amber-500: #d4901e;
+  --sr-amber-600: #b87117;
+  --sr-amber-700: #955215;
+  --sr-amber-800: #7a4119;
+  --sr-amber-900: #68371a;
+
+  /* Sage palette - Progress, correct, affirmation */
+  --sr-sage-50: #f3f6f0;
+  --sr-sage-100: #e2eadb;
+  --sr-sage-300: #a8bd95;
+  --sr-sage-500: #6b8f55;
+  --sr-sage-700: #4a6b3a;
+
+  /* Semantic tokens */
+  --sr-bg: #faf8f4;
+  --sr-surface: #ffffff;
+  --sr-surface-elevated: #f1f3f8;
+  --sr-fg: #1a2035;
+  --sr-fg-secondary: #4d5f82;
+  --sr-fg-muted: #6b7db3;
+  --sr-primary: #2d3555;
+  --sr-primary-fg: #ffffff;
+  --sr-secondary: #f1f3f8;
+  --sr-secondary-fg: #2d3555;
+  --sr-accent: #e8a838;
+  --sr-accent-fg: #1a2035;
+  --sr-muted: #f1f3f8;
+  --sr-muted-fg: #4d5f82;
+  --sr-border: #e0e4ef;
+  --sr-success: #6b8f55;
+  --sr-error: #c4443c;
+  --sr-warning: #d4901e;
+
+  /* Dot motif spec */
+  --sr-motif-field: #8893e5;
+  --sr-motif-signal: #e8a838;
+  --sr-motif-bg-dark: #1a2035;
+  --sr-motif-bg-light: #faf8f4;
+
+  /* Typography */
+  --sr-font-serif: Source Serif 4, Georgia, serif;
+  --sr-font-sans: Inter, system-ui, -apple-system, sans-serif;
+  --sr-font-mono: Geist Mono, ui-monospace, monospace;
+
+  /* Type scale */
+  --sr-text-xs: 0.75rem;
+  --sr-text-sm: 0.875rem;
+  --sr-text-base: 1rem;
+  --sr-text-lg: 1.125rem;
+  --sr-text-xl: 1.25rem;
+  --sr-text-2xl: 1.5rem;
+  --sr-text-3xl: 1.875rem;
+  --sr-text-4xl: 2.25rem;
+  --sr-text-5xl: 3rem;
+
+  /* Line heights */
+  --sr-leading-tight: 1.25;
+  --sr-leading-normal: 1.5;
+  --sr-leading-relaxed: 1.7;
+
+  /* Layout */
+  --sr-radius-sm: 0.375rem;
+  --sr-radius-md: 0.625rem;
+  --sr-radius-lg: 0.75rem;
+  --sr-radius-xl: 1rem;
+
+  /* Shadows */
+  --sr-shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --sr-shadow-md: 0 2px 8px rgba(0,0,0,0.08);
+  --sr-shadow-lg: 0 4px 16px rgba(0,0,0,0.10);
+
+  /* Motion */
+  --sr-duration-fast: 100ms;
+  --sr-duration-normal: 200ms;
+  --sr-duration-slow: 300ms;
+  --sr-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  /* END GENERATED: brand-tokens */
+}
+
+/* Headings default to serif */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--sr-font-serif);
+  font-weight: 600;
+  color: var(--sr-fg);
+}
+
+/* Body defaults */
+body {
+  font-family: var(--sr-font-sans);
+  color: var(--sr-fg);
+  background: var(--sr-bg);
+  line-height: var(--sr-leading-normal);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
