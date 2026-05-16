@@ -114,10 +114,9 @@ export const studyrareThemeOptions = {
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: semantic.surface,
-          color: navy[900],
+          backgroundColor: navy[900],
+          color: "#ffffff",
           boxShadow: "none",
-          borderBottom: `1px solid ${navy[100]}`,
         },
       },
     },
