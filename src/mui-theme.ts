@@ -89,6 +89,10 @@ export const studyrareThemeOptions = {
           borderRadius: 10,
           textTransform: "none" as const,
           fontWeight: 600,
+          // Typography inside a Button inherits the Button's text color.
+          // Critical for filled buttons (contrastText white) where the
+          // theme's body1/body2 colors would otherwise render invisible.
+          "& .MuiTypography-root": { color: "inherit" },
         },
         containedPrimary: {
           backgroundColor: navy[700],
@@ -117,6 +121,13 @@ export const studyrareThemeOptions = {
           backgroundColor: navy[900],
           color: "#ffffff",
           boxShadow: "none",
+          // Typography and Buttons inside an AppBar inherit the AppBar's
+          // (white) text color. Without these overrides, the theme's
+          // typography variants apply their own hardcoded color (e.g.,
+          // h6 → navy-900) which renders invisible on the navy AppBar.
+          "& .MuiTypography-root": { color: "inherit" },
+          "& .MuiButton-root":     { color: "inherit" },
+          "& .MuiIconButton-root": { color: "inherit" },
         },
       },
     },

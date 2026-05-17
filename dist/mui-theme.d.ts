@@ -155,6 +155,9 @@ export declare const studyrareThemeOptions: {
                     borderRadius: number;
                     textTransform: "none";
                     fontWeight: number;
+                    "& .MuiTypography-root": {
+                        color: string;
+                    };
                 };
                 containedPrimary: {
                     backgroundColor: string;
@@ -187,6 +190,15 @@ export declare const studyrareThemeOptions: {
                     backgroundColor: string;
                     color: string;
                     boxShadow: string;
+                    "& .MuiTypography-root": {
+                        color: string;
+                    };
+                    "& .MuiButton-root": {
+                        color: string;
+                    };
+                    "& .MuiIconButton-root": {
+                        color: string;
+                    };
                 };
             };
         };
