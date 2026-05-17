@@ -1,19 +1,13 @@
 /**
- * StudyRare Brand Guide - Standalone CSS Variables
- * Version 2.0.0
+ * StudyRare Brand Guide — Standalone CSS Variables
+ * GENERATED from tokens.json. DO NOT EDIT — edit tokens.json instead.
  *
- * Import this file into any project (HTML, React, Vue, email templates,
- * PDF generators, etc.) to access the StudyRare brand system.
- *
- * Usage:
- *   @import url('path/to/brand-guide.css');
- *   .my-button { background: var(--sr-amber-400); color: var(--sr-navy-900); }
- *
- * Source of truth: SKILL.md (alongside this file).
+ * Import for HTML, email templates, PDFs, anything that doesn't read Tailwind.
+ * Usage:  @import url('studyrare-brand/brand-guide.css');
+ *         .my-button { background: var(--sr-amber-400); color: var(--sr-navy-900); }
  */
 
 :root {
-  /* GENERATED: brand-tokens — DO NOT EDIT. Run `npm run generate-brand`. */
   /* Navy palette - Structure, trust, professionalism */
   --sr-navy-50: #f1f3f8;
   --sr-navy-100: #e0e4ef;
@@ -116,28 +110,4 @@
   --sr-duration-normal: 200ms;
   --sr-duration-slow: 300ms;
   --sr-easing: cubic-bezier(0.4, 0, 0.2, 1);
-  /* END GENERATED: brand-tokens */
-}
-
-/* Headings default to serif */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--sr-font-serif);
-  font-weight: 600;
-  color: var(--sr-fg);
-}
-
-/* Body defaults */
-body {
-  font-family: var(--sr-font-sans);
-  color: var(--sr-fg);
-  background: var(--sr-bg);
-  line-height: var(--sr-leading-normal);
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
 }

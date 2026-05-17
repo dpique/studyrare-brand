@@ -17,5 +17,5 @@
 export { studyrareThemeOptions, navy, periwinkle, amber, sage } from "./mui-theme";
 export { default as tailwindPreset } from "./tailwind-preset";
 
-import tokens from "./tokens.json";
+import tokens from "../tokens.json";
 export { tokens };

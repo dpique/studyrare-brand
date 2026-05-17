@@ -1,0 +1,44 @@
+{
+  "name": "studyrare-brand",
+  "version": "2.1.0",
+  "description": "Canonical brand kit for every StudyRare app. Single source of truth for colors, typography, motif, logo, slide master.",
+  "private": false,
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./tokens": "./tokens.json",
+    "./tokens.json": "./tokens.json",
+    "./mui-theme": {
+      "types": "./dist/mui-theme.d.ts",
+      "default": "./dist/mui-theme.js"
+    },
+    "./tailwind-preset": {
+      "types": "./dist/tailwind-preset.d.ts",
+      "default": "./dist/tailwind-preset.js"
+    },
+    "./theme.css": "./theme.css",
+    "./brand-guide.css": "./brand-guide.css",
+    "./assets/*": "./assets/*"
+  },
+  "files": [
+    "dist",
+    "tokens.json",
+    "theme.css",
+    "brand-guide.css",
+    "assets"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "generate": "node scripts/generate-brand.mjs",
+    "prepublishOnly": "npm run generate && npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

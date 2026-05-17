@@ -12,7 +12,7 @@
  * website's `src/app/globals.css` `@theme` block, also generated from tokens.json.
  */
 
-import tokens from "./tokens.json";
+import tokens from "../tokens.json";
 
 const { navy, periwinkle, amber, sage, semantic } = tokens.colors;
 const { spacing, shadows, motion } = tokens;

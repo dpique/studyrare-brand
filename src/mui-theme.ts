@@ -10,7 +10,7 @@
  *   const theme = createTheme(studyrareThemeOptions);
  */
 
-import tokens from "./tokens.json";
+import tokens from "../tokens.json";
 
 const { navy, periwinkle, amber, sage, semantic } = tokens.colors;
 
