@@ -3,7 +3,7 @@
   "version": "2.1.0",
   "description": "Canonical brand kit for every StudyRare app. Single source of truth for colors, typography, motif, logo, slide master.",
   "private": false,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
