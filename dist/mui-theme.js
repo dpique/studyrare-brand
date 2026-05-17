@@ -97,7 +97,11 @@ export const studyrareThemeOptions = {
                 containedSecondary: {
                     backgroundColor: amber[400],
                     color: navy[900],
-                    "&:hover": { backgroundColor: amber[500] },
+                    border: `1px solid ${navy[900]}`,
+                    "&:hover": {
+                        backgroundColor: amber[500],
+                        borderColor: navy[900],
+                    },
                 },
             },
         },
@@ -114,16 +118,24 @@ export const studyrareThemeOptions = {
         MuiAppBar: {
             styleOverrides: {
                 root: {
-                    backgroundColor: navy[900],
-                    color: "#ffffff",
+                    // Light navbar — matches the studyrare.com marketing site
+                    // (white bg + navy text + subtle navy-100 border-bottom).
+                    // Prior version had navy-900 bg + white text. Switched to light
+                    // for cross-app visual consistency 2026-05-16.
+                    backgroundColor: "#ffffff",
+                    color: navy[900],
                     boxShadow: "none",
+                    borderBottom: `1px solid ${navy[100]}`,
                     // Typography and Buttons inside an AppBar inherit the AppBar's
-                    // (white) text color. Without these overrides, the theme's
-                    // typography variants apply their own hardcoded color (e.g.,
-                    // h6 → navy-900) which renders invisible on the navy AppBar.
+                    // navy text color. Without these overrides, MUI's typography
+                    // variants apply their own hardcoded color and can fight the
+                    // intended cascade.
                     "& .MuiTypography-root": { color: "inherit" },
-                    "& .MuiButton-root": { color: "inherit" },
                     "& .MuiIconButton-root": { color: "inherit" },
+                    // NOTE: NOT forcing `color: inherit` on .MuiButton-root here so
+                    // that `<Button color="secondary">` (the amber Sign Out / Log In
+                    // CTAs) can keep their explicit navy-900 contrastText against
+                    // amber bg — they style themselves via containedSecondary.
                 },
             },
         },

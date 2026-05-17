@@ -168,8 +168,10 @@ export declare const studyrareThemeOptions: {
                 containedSecondary: {
                     backgroundColor: string;
                     color: string;
+                    border: string;
                     "&:hover": {
                         backgroundColor: string;
+                        borderColor: string;
                     };
                 };
             };
@@ -190,10 +192,8 @@ export declare const studyrareThemeOptions: {
                     backgroundColor: string;
                     color: string;
                     boxShadow: string;
+                    borderBottom: string;
                     "& .MuiTypography-root": {
-                        color: string;
-                    };
-                    "& .MuiButton-root": {
                         color: string;
                     };
                     "& .MuiIconButton-root": {
