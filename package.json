@@ -26,6 +26,13 @@
     "./brand-guide.css": "./brand-guide.css",
     "./assets/*": "./assets/*"
   },
+  "typesVersions": {
+    "*": {
+      "mui-theme": ["./dist/mui-theme.d.ts"],
+      "tailwind-preset": ["./dist/tailwind-preset.d.ts"],
+      "*": ["./dist/*"]
+    }
+  },
   "files": [
     "dist",
     "tokens.json",
