@@ -202,6 +202,29 @@ export declare const studyrareThemeOptions: {
                 };
             };
         };
+        MuiTooltip: {
+            styleOverrides: {
+                tooltip: {
+                    backgroundColor: string;
+                    color: string;
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: number;
+                    padding: string;
+                    borderRadius: number;
+                };
+                arrow: {
+                    color: string;
+                };
+            };
+        };
+        MuiMenuItem: {
+            styleOverrides: {
+                root: {
+                    fontFamily: string;
+                };
+            };
+        };
     };
 };
 export { navy, periwinkle, amber, sage };

@@ -127,6 +127,32 @@ export const studyrareThemeOptions = {
                 },
             },
         },
+        MuiTooltip: {
+            styleOverrides: {
+                tooltip: {
+                    backgroundColor: navy[900],
+                    color: "#ffffff",
+                    fontFamily: SANS,
+                    fontSize: "0.75rem",
+                    fontWeight: 500,
+                    padding: "6px 10px",
+                    borderRadius: 6,
+                },
+                arrow: {
+                    color: navy[900],
+                },
+            },
+        },
+        MuiMenuItem: {
+            styleOverrides: {
+                root: {
+                    fontFamily: SANS,
+                    // Menu items in serif-context menus (e.g., navbar brand-switcher)
+                    // can override this per-instance via sx. Defaults to sans for
+                    // typical UI affordance use.
+                },
+            },
+        },
     },
 };
 export { navy, periwinkle, amber, sage };
