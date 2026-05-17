@@ -69,12 +69,16 @@ export const studyrareThemeOptions = {
   },
   typography: {
     fontFamily: SANS,
+    // Serif (Source Serif 4) reserved for h1 — the featured hero / page-title
+    // moment. Everything else uses Inter sans to match the website's vibe.
+    // This dials back the textbook-y serif feel; serif now signals "this is
+    // THE thing on the page," not "every heading I see."
     h1: { fontFamily: SERIF, fontWeight: 700, color: navy[900] },
-    h2: { fontFamily: SERIF, fontWeight: 700, color: navy[900] },
-    h3: { fontFamily: SERIF, fontWeight: 600, color: navy[900] },
-    h4: { fontFamily: SERIF, fontWeight: 600, color: navy[900] },
-    h5: { fontFamily: SERIF, fontWeight: 600, color: navy[900] },
-    h6: { fontFamily: SERIF, fontWeight: 600, color: navy[900] },
+    h2: { fontFamily: SANS,  fontWeight: 700, color: navy[900] },
+    h3: { fontFamily: SANS,  fontWeight: 600, color: navy[900] },
+    h4: { fontFamily: SANS,  fontWeight: 600, color: navy[900] },
+    h5: { fontFamily: SANS,  fontWeight: 600, color: navy[900] },
+    h6: { fontFamily: SANS,  fontWeight: 600, color: navy[900] },
     body1: { fontFamily: SANS, color: navy[700] },
     body2: { fontFamily: SANS, color: navy[500] },
     button: { fontFamily: SANS, fontWeight: 600, textTransform: "none" as const },
@@ -101,11 +105,7 @@ export const studyrareThemeOptions = {
         containedSecondary: {
           backgroundColor: amber[400],
           color: navy[900],
-          border: `1px solid ${navy[900]}`,
-          "&:hover": {
-            backgroundColor: amber[500],
-            borderColor: navy[900],
-          },
+          "&:hover": { backgroundColor: amber[500] },
         },
       },
     },
@@ -126,7 +126,7 @@ export const studyrareThemeOptions = {
           // (white bg + navy text + subtle navy-100 border-bottom).
           // Prior version had navy-900 bg + white text. Switched to light
           // for cross-app visual consistency 2026-05-16.
-          backgroundColor: "#ffffff",
+          backgroundColor: semantic.surface,
           color: navy[900],
           boxShadow: "none",
           borderBottom: `1px solid ${navy[100]}`,

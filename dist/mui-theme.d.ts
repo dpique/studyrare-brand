@@ -168,10 +168,8 @@ export declare const studyrareThemeOptions: {
                 containedSecondary: {
                     backgroundColor: string;
                     color: string;
-                    border: string;
                     "&:hover": {
                         backgroundColor: string;
-                        borderColor: string;
                     };
                 };
             };
