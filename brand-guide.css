@@ -74,9 +74,9 @@
   --sr-motif-bg-light: #faf8f4;
 
   /* Typography */
-  --sr-font-serif: Source Serif 4, Georgia, serif;
-  --sr-font-sans: Inter, system-ui, -apple-system, sans-serif;
-  --sr-font-mono: Geist Mono, ui-monospace, monospace;
+  --sr-font-serif: "Source Serif 4", Georgia, serif;
+  --sr-font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --sr-font-mono: "Geist Mono", ui-monospace, monospace;
 
   /* Type scale */
   --sr-text-xs: 0.75rem;

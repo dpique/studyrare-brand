@@ -11,8 +11,10 @@
  */
 import tokens from "../tokens.json";
 const { navy, periwinkle, amber, sage, semantic } = tokens.colors;
-const SERIF = '"Source Serif 4", Georgia, serif';
-const SANS = '"Inter", system-ui, -apple-system, sans-serif';
+// Read font stacks from tokens.json instead of duplicating here. tokens.json
+// stores them in CSS-ready form (with quotes around multi-word families).
+const SERIF = tokens.typography.fontFamily.serif;
+const SANS = tokens.typography.fontFamily.sans;
 export const studyrareThemeOptions = {
     palette: {
         primary: {
