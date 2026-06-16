@@ -49,4 +49,28 @@
   --color-sage-300: #a8bd95;
   --color-sage-500: #6b8f55;
   --color-sage-700: #4a6b3a;
+  --font-display: "Schibsted Grotesk", system-ui, -apple-system, sans-serif;
+  --font-sans: "Nunito Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+  --shadow-xs: 0 1px 2px rgba(26,31,54,0.06);
+  --shadow-sm: 0 1px 2px rgba(26,31,54,0.06), 0 2px 6px rgba(26,31,54,0.06);
+  --shadow-md: 0 2px 4px rgba(26,31,54,0.05), 0 6px 16px rgba(26,31,54,0.09);
+  --shadow-lg: 0 4px 8px rgba(26,31,54,0.06), 0 16px 32px rgba(26,31,54,0.12);
+  --shadow-xl: 0 8px 16px rgba(26,31,54,0.08), 0 28px 56px rgba(26,31,54,0.16);
+  --shadow-brand: 0 6px 18px rgba(91,111,219,0.35);
+  --shadow-accent: 0 6px 18px rgba(232,159,61,0.35);
+  --shadow-inset: inset 0 1px 2px rgba(26,31,54,0.07);
+  --shadow-ring: 0 0 0 3px rgba(140,153,239,0.45);
+  --shadow-ring-danger: 0 0 0 3px rgba(224,85,79,0.40);
+  --ease-standard: cubic-bezier(0.2, 0, 0.1, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.5, 1);
 }

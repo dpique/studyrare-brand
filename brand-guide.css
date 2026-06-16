@@ -87,9 +87,11 @@
   --sr-font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
   /* Type scale */
+  --sr-text-2xs: 0.6875rem;
   --sr-text-xs: 0.75rem;
   --sr-text-sm: 0.875rem;
   --sr-text-base: 1rem;
+  --sr-text-md: 1.125rem;
   --sr-text-lg: 1.25rem;
   --sr-text-xl: 1.5rem;
   --sr-text-2xl: 1.875rem;
@@ -99,23 +101,68 @@
 
   /* Line heights */
   --sr-leading-tight: 1.12;
+  --sr-leading-snug: 1.28;
   --sr-leading-normal: 1.5;
   --sr-leading-relaxed: 1.65;
 
-  /* Layout */
-  --sr-radius-sm: 0.375rem;
-  --sr-radius-md: 0.625rem;
-  --sr-radius-lg: 0.875rem;
-  --sr-radius-xl: 1.25rem;
+  /* Letter spacing */
+  --sr-tracking-tight: -0.02em;
+  --sr-tracking-snug: -0.01em;
+  --sr-tracking-normal: 0;
+  --sr-tracking-wide: 0.04em;
+  --sr-tracking-caps: 0.08em;
 
-  /* Shadows */
+  /* Spacing scale (4px grid) */
+  --sr-space-0: 0;
+  --sr-space-1: 0.25rem;
+  --sr-space-2: 0.5rem;
+  --sr-space-3: 0.75rem;
+  --sr-space-4: 1rem;
+  --sr-space-5: 1.25rem;
+  --sr-space-6: 1.5rem;
+  --sr-space-8: 2rem;
+  --sr-space-10: 2.5rem;
+  --sr-space-12: 3rem;
+  --sr-space-16: 4rem;
+  --sr-space-20: 5rem;
+  --sr-space-24: 6rem;
+
+  /* Radii */
+  --sr-radius-xs: 4px;
+  --sr-radius-sm: 6px;
+  --sr-radius-md: 10px;
+  --sr-radius-lg: 14px;
+  --sr-radius-xl: 20px;
+  --sr-radius-2xl: 28px;
+  --sr-radius-pill: 999px;
+  --sr-radius-circle: 50%;
+
+  /* Control heights + containers */
+  --sr-control-h-sm: 32px;
+  --sr-control-h-md: 40px;
+  --sr-control-h-lg: 48px;
+  --sr-container-sm: 640px;
+  --sr-container-md: 820px;
+  --sr-container-lg: 1080px;
+  --sr-container-xl: 1280px;
+
+  /* Shadows + rings */
+  --sr-shadow-xs: 0 1px 2px rgba(26,31,54,0.06);
   --sr-shadow-sm: 0 1px 2px rgba(26,31,54,0.06), 0 2px 6px rgba(26,31,54,0.06);
   --sr-shadow-md: 0 2px 4px rgba(26,31,54,0.05), 0 6px 16px rgba(26,31,54,0.09);
   --sr-shadow-lg: 0 4px 8px rgba(26,31,54,0.06), 0 16px 32px rgba(26,31,54,0.12);
+  --sr-shadow-xl: 0 8px 16px rgba(26,31,54,0.08), 0 28px 56px rgba(26,31,54,0.16);
+  --sr-shadow-brand: 0 6px 18px rgba(91,111,219,0.35);
+  --sr-shadow-accent: 0 6px 18px rgba(232,159,61,0.35);
+  --sr-shadow-inset: inset 0 1px 2px rgba(26,31,54,0.07);
+  --sr-shadow-ring: 0 0 0 3px rgba(140,153,239,0.45);
+  --sr-shadow-ring-danger: 0 0 0 3px rgba(224,85,79,0.40);
 
   /* Motion */
   --sr-duration-fast: 120ms;
   --sr-duration-normal: 200ms;
   --sr-duration-slow: 320ms;
-  --sr-easing: cubic-bezier(0.2, 0, 0.1, 1);
+  --sr-ease-standard: cubic-bezier(0.2, 0, 0.1, 1);
+  --sr-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --sr-ease-spring: cubic-bezier(0.34, 1.4, 0.5, 1);
 }
