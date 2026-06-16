@@ -11,4 +11,4 @@
 - Periwinkle #758ceb
 - Amber #e89f3d
 - Sage #6b8f55
-- Light page #f0f2f7
+- Light page #fbfcfe
