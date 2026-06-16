@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StudyRare Design System — Single Source of Truth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* THE central source — every value below is read live from this file. */
+  @import url("brand-guide.css");
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sr-font-sans);background:var(--sr-bg);color:var(--sr-fg);line-height:1.6;padding:0 0 80px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  header{background:var(--sr-navy-900);color:#fff;padding:34px 0 30px;margin-bottom:8px}
+  header .wrap{display:flex;align-items:center;gap:18px}
+  header img{width:74px;height:74px;border-radius:50%;flex:none;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+  header h1{font-family:var(--sr-font-display);font-weight:800;font-size:28px;letter-spacing:-.02em}
+  header p{color:var(--sr-peri-300);font-size:14px;margin-top:3px;font-family:var(--sr-font-mono)}
+  .live{background:var(--sr-amber-100);border-left:4px solid var(--sr-amber-500);color:var(--sr-amber-700);
+    padding:12px 16px;border-radius:8px;font-size:13.5px;margin:22px 0 8px}
+  h2{font-family:var(--sr-font-display);font-weight:700;font-size:13px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--sr-peri-700);margin:38px 0 14px;border-bottom:1px solid var(--sr-border);padding-bottom:8px}
+  .grid{display:grid;gap:10px}
+  .ramp{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}
+  .sw{border:1px solid var(--sr-border);border-radius:10px;overflow:hidden;background:#fff;font-size:11px}
+  .sw .chip{height:54px}
+  .sw .meta{padding:6px 8px}
+  .sw .nm{font-weight:700;color:var(--sr-fg)}
+  .sw .hx{font-family:var(--sr-font-mono);color:var(--sr-fg-muted);font-size:10.5px;text-transform:uppercase}
+  .semantic{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+  .type{background:#fff;border:1px solid var(--sr-border);border-radius:12px;padding:20px 22px;margin-bottom:12px}
+  .type .lab{font-family:var(--sr-font-mono);font-size:11px;color:var(--sr-fg-muted);text-transform:uppercase;letter-spacing:.05em}
+  .type .demo{margin-top:6px}
+  .scale div{display:flex;align-items:baseline;gap:14px;padding:5px 0;border-top:1px dashed var(--sr-border)}
+  .scale .k{font-family:var(--sr-font-mono);font-size:11px;color:var(--sr-fg-muted);width:54px;flex:none}
+  .row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .card{background:var(--sr-surface);border:1px solid var(--sr-border);border-radius:var(--sr-radius-lg);padding:16px 18px}
+  .btn{font-family:var(--sr-font-display);font-weight:700;border:none;background:var(--sr-accent);color:var(--sr-fg);
+    padding:11px 20px;border-radius:var(--sr-radius-pill);box-shadow:var(--sr-shadow-accent);cursor:pointer}
+  .badge{font-family:var(--sr-font-display);font-size:12px;font-weight:700;padding:4px 11px;border-radius:999px}
+  .gc{background:var(--sr-peri-100);color:var(--sr-peri-700)} .mg{background:var(--sr-amber-100);color:var(--sr-amber-700)}
+  .shadowbox{width:120px;height:64px;background:#fff;border-radius:12px;display:grid;place-items:center;font-size:11px;font-family:var(--sr-font-mono);color:var(--sr-fg-muted)}
+  .marks{display:flex;gap:22px;align-items:center}
+  .marks img{height:84px;background:var(--sr-navy-900);border-radius:12px;padding:8px}
+  .consumers{font-size:14px}
+  .consumers li{margin:5px 0}
+  .consumers code{font-family:var(--sr-font-mono);font-size:12.5px;background:var(--sr-navy-50);padding:1px 6px;border-radius:5px}
+  footer{margin-top:40px;font-size:12.5px;color:var(--sr-fg-muted);border-top:1px solid var(--sr-border);padding-top:16px}
+  h3{font-family:var(--sr-font-display);font-weight:700;font-size:15px;margin:18px 0 8px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <img src="assets/logo.png" alt="StudyRare">
+    <div>
+      <h1>StudyRare Design System</h1>
+      <p>single source of truth · brand/tokens.json → brand-guide.css</p>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="live">⚡ <b>This page reads every value live from <code>brand-guide.css</code></b> (generated from <code>tokens.json</code>). Change a token → <code>npm run generate</code> → reload this page and it updates. Nothing here is hand-typed.</div>
+
+  <h2>Brand marks</h2>
+  <div class="marks">
+    <img src="assets/logo.png" alt="company logo" title="Company logo (the arc)">
+    <img src="assets/series-mark.svg" alt="series mark" title="Foundations series mark (the diamond)">
+    <div style="font-size:13px;color:var(--sr-fg-muted)">Left: company logo (arc).<br>Right: Foundations <b>series</b> mark (diamond).</div>
+  </div>
+
+  <h2>Color — Periwinkle</h2><div class="grid ramp" id="periwinkle"></div>
+  <h2>Color — Amber</h2><div class="grid ramp" id="amber"></div>
+  <h2>Color — Navy / Ink</h2><div class="grid ramp" id="navy"></div>
+  <h2>Color — Sage</h2><div class="grid ramp" id="sage"></div>
+  <h2>Semantic tokens</h2><div class="grid semantic" id="semantic"></div>
+
+  <h2>Typography</h2>
+  <div class="type"><div class="lab">Display — var(--sr-font-display) · headings</div><div class="demo" style="font-family:var(--sr-font-display);font-weight:800;font-size:34px" id="font-display">Phenylketonuria</div></div>
+  <div class="type"><div class="lab">Body — var(--sr-font-sans)</div><div class="demo" style="font-family:var(--sr-font-sans);font-size:16px" id="font-sans">Deficiency of phenylalanine hydroxylase causes phenylalanine to accumulate.</div></div>
+  <div class="type"><div class="lab">Mono — var(--sr-font-mono) · gene / variant</div><div class="demo" style="font-family:var(--sr-font-mono);font-size:15px" id="font-mono">PAH · NM_000277.3:c.1222C&gt;T</div></div>
+  <div class="type scale"><div class="lab" style="margin-bottom:6px">Type scale</div><div id="scale"></div></div>
+
+  <h2>Components</h2>
+  <div class="row">
+    <button class="btn">Start question set →</button>
+    <span class="badge gc">ABGC</span>
+    <span class="badge mg">ABMGG</span>
+    <div class="card">A card surface (radius-lg, brand border).</div>
+  </div>
+
+  <h2>Elevation</h2><div class="row" id="shadows"></div>
+
+  <h2>Who consumes this</h2>
+  <ul class="consumers">
+    <li>🌐 <b>Website</b> — <code>npm i studyrare-brand</code> → <code>@import "studyrare-brand/theme.css"</code> + <code>brand-guide.css</code></li>
+    <li>❓ <b>QBank</b> — imports <code>studyrare-brand/mui-theme</code> (derives from tokens.json)</li>
+    <li>📘 <b>Books</b> — generated <code>foundations-brand.tex</code></li>
+    <li>🎨 <b>Canva</b> — generated <code>canva-setup.md</code></li>
+    <li>🤖 <b>claude.ai skill</b> — <code>brand-guidelines</code> v3</li>
+  </ul>
+
+  <footer>StudyRare brand v3 · everything above derives from <code>brand/tokens.json</code>. To change the brand, edit that one file and run <code>npm run generate</code>.</footer>
+</div>
+
+<script>
+  const cs = getComputedStyle(document.documentElement);
+  const val = (v) => cs.getPropertyValue(v).trim();
+  const swatch = (name, varName) => {
+    const hex = val(varName) || "—";
+    return `<div class="sw"><div class="chip" style="background:${hex}"></div><div class="meta"><div class="nm">${name}</div><div class="hx">${hex}</div></div></div>`;
+  };
+  const ramps = {
+    periwinkle: {stops:['50','100','200','300','400','500','600','700','800','900'], pre:'--sr-peri-'},
+    amber:      {stops:['50','100','200','300','400','500','600','700','800','900'], pre:'--sr-amber-'},
+    navy:       {stops:['25','50','100','200','300','400','500','600','700','800','900','950'], pre:'--sr-navy-'},
+    sage:       {stops:['50','100','300','500','700'], pre:'--sr-sage-'},
+  };
+  for (const [id,{stops,pre}] of Object.entries(ramps))
+    document.getElementById(id).innerHTML = stops.map(s => swatch(s, pre+s)).join('');
+
+  const sem = ['bg','surface','fg','fg-secondary','fg-muted','primary','accent','border','success','error','warning'];
+  document.getElementById('semantic').innerHTML = sem.map(s => swatch(s, '--sr-'+s)).join('');
+
+  const scale = ['2xs','xs','sm','base','md','lg','xl','2xl','3xl','4xl','5xl'];
+  document.getElementById('scale').innerHTML = scale.map(k => {
+    const sz = val('--sr-text-'+k); if(!sz) return '';
+    return `<div><span class="k">${k}</span><span style="font-size:${sz};font-family:var(--sr-font-display);font-weight:700">${sz}</span></div>`;
+  }).join('');
+
+  const shadows = ['xs','sm','md','lg','xl','brand','accent'];
+  document.getElementById('shadows').innerHTML = shadows.map(s =>
+    `<div class="shadowbox" style="box-shadow:var(--sr-shadow-${s})">${s}</div>`).join('');
+</script>
+</body>
+</html>
