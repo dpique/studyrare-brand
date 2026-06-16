@@ -1,0 +1,62 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Buttons" subtitle="Button & IconButton — variants, sizes, states" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-body); background: var(--surface-card); color: var(--text-body); }
+  .wrap { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-5); }
+  .row { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+  .label { font-size: var(--text-2xs); font-weight: 700; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-subtle); width: 100%; margin-bottom: -8px; }
+</style>
+</head>
+<body>
+  <div id="root" class="wrap"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script type="text/babel">
+    const { Button, IconButton } = window.StudyRareDesignSystem_cad071;
+    const I = (name, sz=18) => {
+      const nodes = window.lucide.icons[name];
+      if (!nodes) return null;
+      const inner = nodes.map(([t,a]) => `<${t} ${Object.entries(a).map(([k,v])=>`${k}="${v}"`).join(' ')}/>`).join('');
+      return React.createElement('svg', { width: sz, height: sz, viewBox:'0 0 24 24', fill:'none', stroke:'currentColor', strokeWidth:2, strokeLinecap:'round', strokeLinejoin:'round', dangerouslySetInnerHTML:{ __html: inner } });
+    };
+    function Demo() {
+      return (
+        <>
+          <div className="row">
+            <span className="label">Variants</span>
+            <Button variant="primary">Submit answer</Button>
+            <Button variant="accent" rightIcon={I('ArrowRight')}>Start bootcamp</Button>
+            <Button variant="secondary">Skip</Button>
+            <Button variant="ghost">Cancel</Button>
+            <Button variant="danger">End session</Button>
+          </div>
+          <div className="row">
+            <span className="label">Sizes &amp; states</span>
+            <Button size="sm" variant="primary">Small</Button>
+            <Button size="md" variant="primary" leftIcon={I('Check')}>Medium</Button>
+            <Button size="lg" variant="primary">Large</Button>
+            <Button variant="primary" loading>Saving…</Button>
+            <Button variant="primary" disabled>Disabled</Button>
+          </div>
+          <div className="row">
+            <span className="label">Icon buttons</span>
+            <IconButton label="Flag" variant="flag">{I('Flag',20)}</IconButton>
+            <IconButton label="Flagged" variant="flag" pressed>{I('Flag',20)}</IconButton>
+            <IconButton label="Settings" variant="outline">{I('Settings',20)}</IconButton>
+            <IconButton label="Next" variant="solid">{I('ChevronRight',20)}</IconButton>
+            <IconButton label="Bookmark">{I('Bookmark',20)}</IconButton>
+          </div>
+        </>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+  </script>
+</body>
+</html>

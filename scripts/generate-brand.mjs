@@ -100,9 +100,11 @@ function buildBrandGuideCss() {
   push(`--sr-motif-bg-dark: ${motif.backgroundDark};`);
   push(`--sr-motif-bg-light: ${motif.backgroundLight};`);
   push("");
-  push("/* Typography */");
-  push(`--sr-font-serif: ${typography.fontFamily.serif};`);
+  push("/* Typography (v3: Schibsted Grotesk headings / Nunito Sans body / IBM Plex Mono) */");
+  push(`--sr-font-display: ${typography.fontFamily.display};`);
+  push(`--sr-font-heading: ${typography.fontFamily.display};`);
   push(`--sr-font-sans: ${typography.fontFamily.sans};`);
+  push(`--sr-font-body: ${typography.fontFamily.sans};`);
   push(`--sr-font-mono: ${typography.fontFamily.mono};`);
   push("");
   push("/* Type scale */");
@@ -139,9 +141,53 @@ function writeIfChanged(filePath, newContent) {
   return true;
 }
 
+// v3: emit a LaTeX brand file (for the Foundations books) and a Canva setup sheet.
+function buildLatex() {
+  const hx = (h) => h.replace("#", "").toUpperCase();
+  return [
+    "% GENERATED from tokens.json — DO NOT EDIT. StudyRare brand colors for XeLaTeX books.",
+    "% \\input this in a book preamble (e.g. books/_template/foundations.cls).",
+    "\\RequirePackage{xcolor}",
+    `\\definecolor{srnavy}{HTML}{${hx(navy["900"])}}`,
+    `\\definecolor{srnavy2}{HTML}{${hx(semantic.primary)}}`,
+    `\\definecolor{srperi}{HTML}{${hx(periwinkle["500"])}}`,
+    `\\definecolor{sramber}{HTML}{${hx(amber["500"])}}`,
+    `\\definecolor{srsage}{HTML}{${hx(sage["500"])}}`,
+    `\\definecolor{srpage}{HTML}{${hx(semantic.background)}}`,
+    "% Fonts (fontspec/xelatex): \\newfontfamily\\srheading{Schibsted Grotesk};",
+    "%   \\setmainfont{Nunito Sans}; \\setmonofont{IBM Plex Mono}",
+    "",
+  ].join("\n");
+}
+
+function buildCanvaSheet() {
+  return [
+    "# Canva Brand Kit — GENERATED from tokens.json",
+    "",
+    "## Fonts",
+    "- Headings: **Schibsted Grotesk** (upload the .ttf — not in Canva's library)",
+    "- Body: **Nunito Sans** (in Canva's library)",
+    "- Code / gene names: **IBM Plex Mono** (in Canva's library; apply by hand)",
+    "",
+    "## Colors (set these, delete any others)",
+    `- Deep navy ${navy["900"]}`,
+    `- Navy ${semantic.primary}`,
+    `- Periwinkle ${periwinkle["500"]}`,
+    `- Amber ${amber["500"]}`,
+    `- Sage ${sage["500"]}`,
+    `- Light page ${semantic.background}`,
+    "",
+  ].join("\n");
+}
+
+const latexPath = path.join(brandRoot, "foundations-brand.tex");
+const canvaPath = path.join(brandRoot, "canva-setup.md");
+
 const targets = [
-  ["theme.css",       themeCssPath,   buildThemeCss()],
-  ["brand-guide.css", brandGuidePath, buildBrandGuideCss()],
+  ["theme.css",             themeCssPath,   buildThemeCss()],
+  ["brand-guide.css",       brandGuidePath, buildBrandGuideCss()],
+  ["foundations-brand.tex", latexPath,      buildLatex()],
+  ["canva-setup.md",        canvaPath,      buildCanvaSheet()],
 ];
 
 let changed = 0;

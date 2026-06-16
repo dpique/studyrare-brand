@@ -16,6 +16,7 @@ declare const studyrarePreset: {
         extend: {
             colors: {
                 navy: {
+                    "25": string;
                     "50": string;
                     "100": string;
                     "200": string;
@@ -31,16 +32,26 @@ declare const studyrarePreset: {
                 periwinkle: {
                     "50": string;
                     "100": string;
+                    "200": string;
                     "300": string;
+                    "400": string;
                     "500": string;
+                    "600": string;
                     "700": string;
+                    "800": string;
+                    "900": string;
                 };
                 peri: {
                     "50": string;
                     "100": string;
+                    "200": string;
                     "300": string;
+                    "400": string;
                     "500": string;
+                    "600": string;
                     "700": string;
+                    "800": string;
+                    "900": string;
                 };
                 amber: {
                     "50": string;
@@ -68,7 +79,7 @@ declare const studyrarePreset: {
                 warning: string;
             };
             fontFamily: {
-                serif: string[];
+                display: string[];
                 sans: string[];
                 mono: string[];
             };

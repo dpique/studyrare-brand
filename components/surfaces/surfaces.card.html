@@ -1,0 +1,63 @@
+<!-- @dsCard group="Components" viewport="700x560" name="Cards, Tabs & Dialog" subtitle="Surfaces & navigation" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-body); background: var(--surface-page); color: var(--text-body); }
+  .wrap { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-6); }
+  .label { font-size: var(--text-2xs); font-weight: 700; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-subtle); margin-bottom: var(--space-3); }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+  .ct { font-family: var(--font-display); font-weight: 700; font-size: var(--text-sm); }
+  .cs { font-size: var(--text-xs); margin-top: 4px; opacity: .85; }
+  .tabrow { display: flex; gap: var(--space-8); align-items: center; flex-wrap: wrap; }
+  /* contain the modal overlay inside its preview frame */
+  .dialog-frame { position: relative; height: 240px; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-subtle); background: var(--surface-sunken); }
+  .dialog-frame .sr-dialog__overlay { position: absolute; }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script type="text/babel">
+    const { Card, Tabs, Dialog, Button } = window.StudyRareDesignSystem_cad071;
+    function Demo() {
+      const [tab, setTab] = React.useState('overview');
+      const [view, setView] = React.useState('all');
+      return (
+        <div className="wrap">
+          <div>
+            <div className="label">Card variants</div>
+            <div className="cards">
+              <Card interactive><div className="ct">Default</div><div className="cs" style={{color:'var(--text-muted)'}}>Hover to lift</div></Card>
+              <Card variant="navy"><div className="ct">Navy</div><div className="cs">Stats &amp; CTAs</div></Card>
+              <Card variant="accent"><div className="ct" style={{color:'var(--amber-800)'}}>Mnemonic</div><div className="cs" style={{color:'var(--amber-800)'}}>Tip callout</div></Card>
+            </div>
+          </div>
+          <div>
+            <div className="label">Tabs</div>
+            <div className="tabrow">
+              <Tabs variant="line" value={tab} onChange={setTab} items={[{value:'overview',label:'Overview'},{value:'performance',label:'Performance'},{value:'notes',label:'Notes'}]} />
+              <Tabs variant="pill" value={view} onChange={setView} items={[{value:'all',label:'All',count:240},{value:'flagged',label:'Flagged',count:12},{value:'wrong',label:'Incorrect',count:38}]} />
+            </div>
+          </div>
+          <div>
+            <div className="label">Dialog</div>
+            <div className="dialog-frame">
+              <Dialog open title="End this session?" description="Your progress on the 18 answered questions will be saved to your dashboard."
+                footer={<><Button variant="ghost">Keep going</Button><Button variant="danger">End session</Button></>}>
+                You can resume an unfinished set anytime from the question bank.
+              </Dialog>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+  </script>
+</body>
+</html>

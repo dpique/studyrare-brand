@@ -1,0 +1,62 @@
+<!-- @dsCard group="Components" viewport="700x290" name="Badges, Tags, Avatars & Stats" subtitle="Status, domains, identity & metrics" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-body); background: var(--surface-card); color: var(--text-body); }
+  .wrap { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-5); }
+  .row { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+  .label { font-size: var(--text-2xs); font-weight: 700; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-subtle); width: 100%; margin-bottom: -8px; }
+  .statrow { display: flex; gap: var(--space-10); }
+</style>
+</head>
+<body>
+  <div id="root" class="wrap"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script type="text/babel">
+    const { Badge, Tag, Avatar, Stat } = window.StudyRareDesignSystem_cad071;
+    function Demo() {
+      return (
+        <>
+          <div className="row">
+            <span className="label">Badges</span>
+            <Badge variant="correct" dot>Correct</Badge>
+            <Badge variant="incorrect" dot>Incorrect</Badge>
+            <Badge variant="brand">High-yield</Badge>
+            <Badge variant="accent" solid>Flagged</Badge>
+            <Badge variant="info">New</Badge>
+            <Badge variant="neutral" solid>BETA</Badge>
+          </div>
+          <div className="row">
+            <span className="label">Tags / domains</span>
+            <Tag color="var(--periwinkle-500)">Cytogenetics</Tag>
+            <Tag color="var(--amber-500)">Metabolic</Tag>
+            <Tag selected onClick={()=>{}}>Cancer genetics</Tag>
+            <Tag onRemove={()=>{}}>Prenatal</Tag>
+          </div>
+          <div className="row">
+            <span className="label">Avatars</span>
+            <Avatar name="Daniel Piqué" size="sm" />
+            <Avatar name="Leann To" tone="amber" />
+            <Avatar name="ABMGG" tone="navy" size="lg" ring />
+          </div>
+          <div className="row">
+            <span className="label">Stats</span>
+            <div className="statrow">
+              <Stat label="Accuracy" value={78} suffix="%" delta={6} accent />
+              <Stat label="Answered" value="1,204" />
+              <Stat label="Day streak" value={12} suffix="days" />
+            </div>
+          </div>
+        </>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+  </script>
+</body>
+</html>

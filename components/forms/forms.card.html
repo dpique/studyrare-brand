@@ -1,0 +1,61 @@
+<!-- @dsCard group="Components" viewport="700x520" name="Form controls" subtitle="Input, Select, Checkbox, Radio, Switch & Choice" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-body); background: var(--surface-card); color: var(--text-body); }
+  .wrap { padding: var(--space-6); display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6) var(--space-8); align-items: start; }
+  .col { display: flex; flex-direction: column; gap: var(--space-4); }
+  .span2 { grid-column: 1 / -1; }
+  .label { font-size: var(--text-2xs); font-weight: 700; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-subtle); }
+  .stack { display: flex; flex-direction: column; gap: var(--space-3); }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script type="text/babel">
+    const { Input, Select, Checkbox, Radio, Switch, Choice } = window.StudyRareDesignSystem_cad071;
+    function Demo() {
+      const [mode, setMode] = React.useState('tutor');
+      return (
+        <div className="wrap">
+          <div className="col">
+            <Input label="Email" type="email" placeholder="you@program.edu" required />
+            <Input label="Search questions" placeholder="Search by topic…" hint="Try “trinucleotide repeat”" />
+            <Input label="Password" type="password" defaultValue="hunt1ngton" error="Incorrect password" />
+            <Select label="Domain" options={['All domains','Cytogenetics','Metabolic genetics','Cancer genetics','Prenatal']} />
+          </div>
+          <div className="col">
+            <div>
+              <div className="label" style={{marginBottom:'10px'}}>Study mode</div>
+              <div className="stack">
+                <Radio name="m" label="Tutor mode" description="See explanations immediately" checked={mode==='tutor'} onChange={()=>setMode('tutor')} />
+                <Radio name="m" label="Timed mode" description="Simulate exam conditions" checked={mode==='timed'} onChange={()=>setMode('timed')} />
+              </div>
+            </div>
+            <div className="stack">
+              <Checkbox label="Unanswered only" defaultChecked />
+              <Checkbox label="Flagged questions" />
+              <Switch label="Show countdown timer" defaultChecked />
+            </div>
+          </div>
+          <div className="col span2">
+            <div className="label">Answer choices — selected, then graded</div>
+            <Choice letter="A" graded state="incorrect" selected>Autosomal dominant inheritance</Choice>
+            <Choice letter="B" graded state="correct">Autosomal recessive inheritance</Choice>
+            <Choice letter="C" graded>X-linked recessive inheritance</Choice>
+            <Choice letter="D" graded>Mitochondrial inheritance</Choice>
+          </div>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+  </script>
+</body>
+</html>

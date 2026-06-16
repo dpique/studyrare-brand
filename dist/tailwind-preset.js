@@ -30,9 +30,9 @@ const studyrarePreset = {
                 warning: semantic.warning,
             },
             fontFamily: {
-                serif: ['"Source Serif 4"', "Georgia", "serif"],
-                sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
-                mono: ['"Geist Mono"', "ui-monospace", "monospace"],
+                display: ['"Schibsted Grotesk"', "system-ui", "-apple-system", "sans-serif"],
+                sans: ['"Nunito Sans"', "system-ui", "-apple-system", "sans-serif"],
+                mono: ['"IBM Plex Mono"', "ui-monospace", "monospace"],
             },
             borderRadius: {
                 DEFAULT: spacing.borderRadius,

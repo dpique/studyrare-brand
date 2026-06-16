@@ -16,8 +16,8 @@ const { navy, periwinkle, amber, sage, semantic } = tokens.colors;
 
 // Read font stacks from tokens.json instead of duplicating here. tokens.json
 // stores them in CSS-ready form (with quotes around multi-word families).
-const SERIF = tokens.typography.fontFamily.serif;
-const SANS  = tokens.typography.fontFamily.sans;
+const DISPLAY = tokens.typography.fontFamily.display; // Schibsted Grotesk — headings
+const SANS    = tokens.typography.fontFamily.sans;    // Nunito Sans — body/UI
 
 export const studyrareThemeOptions = {
   palette: {
@@ -71,11 +71,9 @@ export const studyrareThemeOptions = {
   },
   typography: {
     fontFamily: SANS,
-    // Serif (Source Serif 4) reserved for h1 — the featured hero / page-title
-    // moment. Everything else uses Inter sans to match the website's vibe.
-    // This dials back the textbook-y serif feel; serif now signals "this is
-    // THE thing on the page," not "every heading I see."
-    h1: { fontFamily: SERIF, fontWeight: 700, color: navy[900] },
+    // v3: Schibsted Grotesk (display) for the h1 hero moment; Nunito Sans for
+    // sub-headings and body. (The serif era is retired.)
+    h1: { fontFamily: DISPLAY, fontWeight: 700, color: navy[900] },
     h2: { fontFamily: SANS,  fontWeight: 700, color: navy[900] },
     h3: { fontFamily: SANS,  fontWeight: 600, color: navy[900] },
     h4: { fontFamily: SANS,  fontWeight: 600, color: navy[900] },
