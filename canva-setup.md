@@ -7,7 +7,7 @@
 
 ## Colors (set these, delete any others)
 - Deep navy #242a45
-- Navy #343c5a
+- Navy #242a45
 - Periwinkle #758ceb
 - Amber #e89f3d
 - Sage #6b8f55
