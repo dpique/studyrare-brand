@@ -28,7 +28,7 @@ const themeCssPath   = path.join(brandRoot, "theme.css");
 const brandGuidePath = path.join(brandRoot, "brand-guide.css");
 
 const tokens = JSON.parse(fs.readFileSync(tokensPath, "utf8"));
-const { navy, periwinkle, amber, sage, semantic, navyField, indigo, error, warning600 } = tokens.colors;
+const { navy, periwinkle, amber, sage, semantic, error } = tokens.colors;
 const { motif, typography, spacing, shadows, motion } = tokens;
 
 function buildThemeCss() {
@@ -321,13 +321,13 @@ function buildDsColorsCss() {
   for (const [stop, hex] of Object.entries(navy)) {
     L.push(`  ${pad(`--ink-${stop}:`, 11)}${U(hex)};`);
   }
-  L.push(`  ${pad("--navy:", 11)}${U(navyField)}; /* the brand backdrop — sits between ink-700 and ink-800 */`);
+  L.push(`  ${pad("--navy:", 11)}${U(navy["900"])}; /* unified brand navy = #242A45 (secondary navy #343C5A retired) */`);
   L.push("");
 
-  L.push("  /* ---- Indigo — secondary deep accent (the translucent logo circle) ---- */");
-  for (const [stop, hex] of Object.entries(indigo)) {
-    L.push(`  --indigo-${stop}: ${U(hex)};`);
-  }
+  L.push("  /* ---- Indigo retired -> aliased to periwinkle (back-compat only) ---- */");
+  L.push(`  --indigo-400: ${U(periwinkle["600"])};`);
+  L.push(`  --indigo-500: ${U(periwinkle["700"])};`);
+  L.push(`  --indigo-600: ${U(periwinkle["800"])};`);
   L.push("");
 
   L.push("  /* ---- Semantic status hues (tuned to live beside the brand) ---- */");
@@ -345,7 +345,7 @@ function buildDsColorsCss() {
   L.push("");
   L.push(`  ${pad("--warning-50:", 15)}${U(amber["50"])};`);
   L.push(`  ${pad("--warning-500:", 15)}${U(amber["500"])};`);
-  L.push(`  ${pad("--warning-600:", 15)}${U(warning600)};`);
+  L.push(`  ${pad("--warning-600:", 15)}${U(amber["600"])};`);
   L.push("");
   L.push(`  ${pad("--info-50:", 12)}${U(periwinkle["50"])};`);
   L.push(`  ${pad("--info-500:", 12)}${U(periwinkle["600"])};`);

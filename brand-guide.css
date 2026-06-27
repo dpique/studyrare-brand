@@ -23,28 +23,28 @@
   --sr-navy-950: #1a1f36;
 
   /* Periwinkle palette - The dot field, structural connective color */
-  --sr-peri-50: #eef1fe;
-  --sr-peri-100: #dfe4fc;
-  --sr-peri-200: #c5cdf9;
-  --sr-peri-300: #a6b2f4;
-  --sr-peri-400: #8c99ef;
-  --sr-peri-500: #758ceb;
-  --sr-peri-600: #5b6fdb;
-  --sr-peri-700: #4a59be;
-  --sr-peri-800: #3d4998;
-  --sr-peri-900: #353f79;
+  --sr-peri-50: #eef1fd;
+  --sr-peri-100: #dee3fb;
+  --sr-peri-200: #c2caf6;
+  --sr-peri-300: #9da8ef;
+  --sr-peri-400: #7c8ae9;
+  --sr-peri-500: #5e72e4;
+  --sr-peri-600: #4a5ad2;
+  --sr-peri-700: #3e4bb0;
+  --sr-peri-800: #37428a;
+  --sr-peri-900: #313b6d;
 
   /* Amber palette - CTAs, action, the rare signal */
-  --sr-amber-50: #fef6e9;
-  --sr-amber-100: #fdebcb;
-  --sr-amber-200: #fadb9f;
-  --sr-amber-300: #f6c66c;
-  --sr-amber-400: #f0b461;
-  --sr-amber-500: #e89f3d;
-  --sr-amber-600: #d4842a;
-  --sr-amber-700: #b0681f;
-  --sr-amber-800: #8a521e;
-  --sr-amber-900: #6f441d;
+  --sr-amber-50: #fef5e6;
+  --sr-amber-100: #fbe7c2;
+  --sr-amber-200: #f7d392;
+  --sr-amber-300: #f2bd5e;
+  --sr-amber-400: #efab3d;
+  --sr-amber-500: #ec9b27;
+  --sr-amber-600: #d17f18;
+  --sr-amber-700: #ab6416;
+  --sr-amber-800: #894f18;
+  --sr-amber-900: #6e4017;
 
   /* Sage palette - Progress, correct, affirmation */
   --sr-sage-50: #f3f6f0;
@@ -65,18 +65,18 @@
   --sr-primary-fg: #ffffff;
   --sr-secondary: #e4e7f0;
   --sr-secondary-fg: #3c4463;
-  --sr-accent: #e89f3d;
+  --sr-accent: #ec9b27;
   --sr-accent-fg: #242a45;
   --sr-muted: #e4e7f0;
   --sr-muted-fg: #5f698a;
   --sr-border: #e4e7f0;
   --sr-success: #6b8f55;
   --sr-error: #e0554f;
-  --sr-warning: #e89f3d;
+  --sr-warning: #ec9b27;
 
   /* Dot motif spec */
-  --sr-motif-field: #758ceb;
-  --sr-motif-signal: #e89f3d;
+  --sr-motif-field: #5e72e4;
+  --sr-motif-signal: #ec9b27;
   --sr-motif-bg-dark: #242a45;
   --sr-motif-bg-light: #f0f2f7;
 
