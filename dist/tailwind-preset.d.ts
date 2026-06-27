@@ -70,6 +70,7 @@ declare const studyrarePreset: {
                     "100": string;
                     "300": string;
                     "500": string;
+                    "600": string;
                     "700": string;
                 };
                 background: string;

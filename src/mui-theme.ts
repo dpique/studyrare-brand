@@ -68,6 +68,14 @@ export const studyrareThemeOptions = {
       800: navy[800],
       900: navy[900],
     },
+    // Full brand color ramps exposed as palette scales so consumers reference
+    // exact steps (theme.palette.navy[700], sx={{ color: 'navy.700' }}) instead
+    // of borrowing semantic roles (primary.*) for non-action chrome. Mirrors the
+    // --sr-* CSS variables in brand-guide.css — same single source (tokens.json).
+    navy,
+    amber,
+    periwinkle,
+    sage,
   },
   typography: {
     fontFamily: SANS,
