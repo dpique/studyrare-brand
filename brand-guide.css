@@ -54,6 +54,13 @@
   --sr-sage-600: #5a7a47;
   --sr-sage-700: #4a6b3a;
 
+  /* Error palette - Validation and failure states (the semantic --sr-error is error-500) */
+  --sr-error-50: #fceceb;
+  --sr-error-100: #f8d2d0;
+  --sr-error-500: #e0554f;
+  --sr-error-600: #c53d38;
+  --sr-error-700: #a2302c;
+
   /* Semantic tokens */
   --sr-bg: #fbfcfe;
   --sr-surface: #ffffff;

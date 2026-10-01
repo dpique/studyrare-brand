@@ -50,6 +50,11 @@
   --color-sage-500: #6b8f55;
   --color-sage-600: #5a7a47;
   --color-sage-700: #4a6b3a;
+  --color-error-50: #fceceb;
+  --color-error-100: #f8d2d0;
+  --color-error-500: #e0554f;
+  --color-error-600: #c53d38;
+  --color-error-700: #a2302c;
   --font-display: "Schibsted Grotesk", system-ui, -apple-system, sans-serif;
   --font-sans: "Nunito Sans", system-ui, -apple-system, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;

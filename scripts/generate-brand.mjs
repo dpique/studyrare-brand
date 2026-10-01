@@ -43,6 +43,7 @@ function buildThemeCss() {
   for (const [stop, hex] of Object.entries(periwinkle)) lines.push(`  --color-periwinkle-${stop}: ${hex};`);
   for (const [stop, hex] of Object.entries(periwinkle)) lines.push(`  --color-peri-${stop}: ${hex};`);
   for (const [stop, hex] of Object.entries(sage))       lines.push(`  --color-sage-${stop}: ${hex};`);
+  for (const [stop, hex] of Object.entries(error))      lines.push(`  --color-error-${stop}: ${hex};`);
   lines.push(`  --font-display: ${typography.fontFamily.display};`);
   lines.push(`  --font-sans: ${typography.fontFamily.sans};`);
   lines.push(`  --font-mono: ${typography.fontFamily.mono};`);
@@ -81,6 +82,9 @@ function buildBrandGuideCss() {
   push("");
   push("/* Sage palette - Progress, correct, affirmation */");
   for (const [stop, hex] of Object.entries(sage)) push(`--sr-sage-${stop}: ${hex};`);
+  push("");
+  push("/* Error palette - Validation and failure states (the semantic --sr-error is error-500) */");
+  for (const [stop, hex] of Object.entries(error)) push(`--sr-error-${stop}: ${hex};`);
   push("");
   push("/* Semantic tokens */");
   push(`--sr-bg: ${semantic.background};`);
